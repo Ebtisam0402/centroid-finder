@@ -8,7 +8,8 @@ ImageBinarizer: Converts the given BufferedImage into a binary 2D array or Conve
 
 DistanceImageBinarizer: Converts the given BufferedImage into a binary 2D array using color distance and a threshold. Each entry in the returned array is either 0 or 1, representing a black or white pixel. Converts a binary 2D array into a BufferedImage.return BufferedImage.
 
-ImageGroupFinder:
+ImageGroupFinder:Finds connected groups in an image. The groups are sorted in DESCENDING order according to Group's compareTo method.It returns connected groups in an image sorted in descending order
+
 BinarizingImageGroupFinder:
 DfsBinaryGroupFinder:
 Group:
