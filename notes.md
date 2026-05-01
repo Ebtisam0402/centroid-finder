@@ -5,6 +5,7 @@ ColorDistanceFinder: Computes the distance between two colors Each color is repr
 EuclideanColorDistance:The Euclidean color distance is calculated by treating each color as a point, in 3D space (red, green, blue) and applying the Euclidean distance formula: sqrt((r1 - r2)^2 + (g1 - g2)^2 + (b1 - b2)^2). This gives a measure of how visually different the two colors are.
 
 ImageBinarizer:
+
 DistanceImageBinarizer:
 ImageGroupFinder:
 BinarizingImageGroupFinder:
