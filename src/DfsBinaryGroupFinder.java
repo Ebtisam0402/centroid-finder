@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DfsBinaryGroupFinder implements BinaryGroupFinder {
@@ -37,8 +38,28 @@ public class DfsBinaryGroupFinder implements BinaryGroupFinder {
      */
     @Override
     public List<Group> findConnectedGroups(int[][] image) {
+        List<Group> groups = new ArrayList<>();
+        boolean[][] visited = new boolean[image.length][image[0].length];
 
-        return null;
+        for (int row = 0; row < image.length; row++) {
+            for (int col = 0; col < image[0].length; col++) {
+                if (image[row][col] == 1 && !visited[row][col]) {
+                    int[] result = exploreGroup(new int[] { row, col }, image, visited);
+
+                    int size = result[0];
+                    int sumX = result[1];
+                    int sumY = result[2];
+
+                    int groupX = sumX / size;
+                    int groupY = sumY / size;
+
+                    groups.add(new Group(size, new Coordinate(groupX, groupY)));
+                }
+            }
+        }
+        groups.sort(Collections.reverseOrder());
+
+        return groups;
     }
 
     private static int[] exploreGroup(int[] currentLoc, int[][] image, boolean[][] visited) {
@@ -78,35 +99,23 @@ public class DfsBinaryGroupFinder implements BinaryGroupFinder {
         int curC = current[1];
 
         int[][] directions = {
-            {1,0}, //down
-            {-1,0}, //up
-            {0,1}, //right
-            {0,-1} //left
+                { 1, 0 }, // down
+                { -1, 0 }, // up
+                { 0, 1 }, // right
+                { 0, -1 } // left
         };
 
-        for(int[] direction: directions){
+        for (int[] direction : directions) {
             int newR = curR + direction[0];
             int newC = curC + direction[1];
 
-            if(newR >= 0 && newR < image.length && newC >=0 && newC < image[0].length) {
-                moves.add(new int[] {newR, newC});
+            if (newR >= 0 && newR < image.length && newC >= 0 && newC < image[0].length) {
+                moves.add(new int[] { newR, newC });
             }
         }
 
         return moves;
 
-    }
-
-    public static int[] findConnectedGroupsLocation(int[][] image) {
-        for (int row = 0; row < image.length; row++) {
-            for (int col = 0; col < image[0].length; col++) {
-                if (image[row][col] == 1) {
-                    return new int[] { row, col };
-
-                }
-            }
-        }
-        throw new IllegalArgumentException("No conneted group found");
     }
 
 }
