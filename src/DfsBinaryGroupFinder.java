@@ -30,7 +30,19 @@ public class DfsBinaryGroupFinder implements BinaryGroupFinder {
     */
     @Override
     public List<Group> findConnectedGroups(int[][] image) {
+
         return null;
+    }
+    public static int[] findConnectedGroupsLocation(int[][] image) {
+        for(int row = 0; row < image.length; row++){
+            for(int col = 0; col < image[0].length; col++){
+                if(image[row][col] == 1) {
+                    return new int[]{row, col};
+
+                }
+            }
+        }
+        throw new IllegalArgumentException("No conneted group found");
     }
     
 }
