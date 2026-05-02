@@ -84,8 +84,8 @@ public class DfsBinaryGroupFinder implements BinaryGroupFinder {
             int[] result = exploreGroup(move, image, visited);
 
             size += result[0];
-            size += result[1];
-            size += result[2];
+            sumX += result[1];
+            sumY += result[2];
         }
 
         return new int[] { size, sumX, sumY };
