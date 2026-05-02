@@ -45,6 +45,11 @@ public class DistanceImageBinarizer implements ImageBinarizer {
      */
     @Override
     public int[][] toBinaryArray(BufferedImage image) {
+        if (image == null) {
+            throw new NullPointerException("Image is not found");
+            
+        }
+        int[][] toBinaryArray = new 
         return null;
     }
 
