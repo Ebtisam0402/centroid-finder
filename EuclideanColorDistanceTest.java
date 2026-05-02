@@ -74,5 +74,14 @@ public class EuclideanColorDistanceTest {
         assertEquals(88.334, actual, 0.001);
     }
 
+    @Test
+    public void testDistanceWorksBothDirections() {
+        EuclideanColorDistance finder = new EuclideanColorDistance();
+
+        double first = finder.distance(0x123456, 0x654321);
+        double second = finder.distance(0x654321, 0x123456);
+
+        assertEquals(first, second, 0.001);
+    }
 
 }
