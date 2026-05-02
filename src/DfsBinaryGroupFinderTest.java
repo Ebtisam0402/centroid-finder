@@ -40,4 +40,22 @@ public class DfsBinaryGroupFinderTest {
         assertEquals(0, group.centroid().x());
         assertEquals(0, group.centroid().y());
     }
+
+    @Test
+    public void testTwoSeparateGroupsSortedDescending() {
+        int[][] image = {
+            {1, 1, 0, 0},
+            {1, 0, 0, 1},
+            {0, 0, 0, 1}
+        };
+
+        DfsBinaryGroupFinder finder = new DfsBinaryGroupFinder();
+
+        List<Group> expected = List.of(
+            new Group(3, new Coordinate(0, 0)),
+            new Group(2, new Coordinate(3, 1))
+        );
+
+        assertEquals(expected, finder.findConnectedGroups(image));
+    }
 }
