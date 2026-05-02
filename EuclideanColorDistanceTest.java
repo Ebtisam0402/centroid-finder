@@ -12,4 +12,14 @@ public class EuclideanColorDistanceTest {
 
         assertEquals(0.0, actual, 0.001);
     }
+
+    @Test
+    public void testBlackToWhiteDistance() {
+        ColorDistanceFinder finder = new EuclideanColorDistance();
+
+        double actual = finder.distance(0x000000, 0xFFFFFF);
+        double expected = Math.sqrt((255 * 255) + (255 * 255) + (255 * 255));
+
+        assertEquals(expected, actual, 0.001);
+    }
 }
