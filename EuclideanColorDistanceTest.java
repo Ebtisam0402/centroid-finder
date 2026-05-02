@@ -31,4 +31,15 @@ public class EuclideanColorDistanceTest {
 
         assertEquals(360.624, actual, 0.001);
     }
+
+    @Test
+    public void testRedToBlueDistance() {
+        ColorDistanceFinder finder = new EuclideanColorDistance();
+
+        double actual = finder.distance(0xFF0000, 0x0000FF);
+        double expected = Math.sqrt((255 * 255) + (0 * 0) + (255 * 255));
+
+        assertEquals(expected, actual, 0.001);
+    }
+
 }
