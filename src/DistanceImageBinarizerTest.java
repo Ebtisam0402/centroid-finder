@@ -122,4 +122,14 @@ public class DistanceImageBinarizerTest {
         });
     }
 
+
+    @Test
+    public void testToBufferedImageNullThrowsException() {
+        DistanceImageBinarizer binarizer =
+            new DistanceImageBinarizer(new EuclideanColorDistance(), 0xFF0000, 10);
+
+        assertThrows(NullPointerException.class, () -> {
+            binarizer.toBufferedImage(null);
+        });
+    }
 }
