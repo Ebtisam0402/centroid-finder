@@ -112,4 +112,6 @@ public class DistanceImageBinarizerTest {
         assertEquals(2, result.getHeight());
     }
 
+    
+
 }
