@@ -37,7 +37,6 @@ Again, consider starting with unit tests. You may consider using WolframAlpha to
 
 MAKE SURE YOU MAKE THOROUGH UNIT TESTS.
 
-
 ## Wave 4: Implement DistanceImageBinarizer
 
 To do this you will need to research `java.awt.image.BufferedImage`. In particular, make sure to understand `getRGB` and `setRGB`. When creating a new image, you can use the below to start the instance:
@@ -58,7 +57,6 @@ This implementation will be relatively short! It will mostly be calling methods 
 
 MAKE SURE YOU MAKE THOROUGH UNIT TESTS. Consider asking the AI to teach you about mocks and fakes in unit testing and how they may be helpful here. I recommend NOT using any external library other than JUnit. If the AI wants to use another external library, consider asking it not to and to make stubs instead.
 
-
 ## Wave 6: Validation
 
 To validate your code is working, make sure you're in the centroid-finder directory and run the below command:
@@ -74,3 +72,5 @@ Once you have confirmed it is working, clean up your code, make sure it's commit
 ## Optional Wave 7: Enhancements?
 
 If you want to, you can make a new branch to start experimenting. See if you can come up with a better color distance method (hint: look up perceptual color spaces). See if you can make your code more efficient or mor suited to spotting salamanders! Experiment with other test files. PLEASE MAKE SURE THIS IS IN A SEPARATE BRANCH FROM YOUR SUBMISSION.
+
+## Video Branch Test
