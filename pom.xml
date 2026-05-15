@@ -13,6 +13,12 @@
   </properties>
 
   <dependencies>
+  <!--JCodec dependency-->
+  <dependency>
+    <groupId>org.jcodec</groupId>
+    <artifactId>jcodec</artifactId>
+    <version>0.2.3</version>
+</dependency>
 
   <!-- JFreeChart for plotting -->
     <dependency>
