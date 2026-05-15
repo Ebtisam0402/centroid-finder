@@ -1,12 +1,12 @@
+
 //package main.java;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
+import org.jcodec.scale.AWTUtil;
 import org.jcodec.api.FrameGrab;
 import org.jcodec.api.JCodecException;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.model.Picture;
-
 
 public class VideoExperiment {
     public static void main(String[] args) {
@@ -22,13 +22,15 @@ public class VideoExperiment {
 
             while ((picture = grab.getNativeFrame()) != null && frameNumber < 5) {
 
-                BufferedImage image =
-                        org.jcodec.scale.AWTUtil.toBufferedImage(picture);
+                // BufferedImage image =
+                // org.jcodec.scale.AWTUtil.toBufferedImage(picture);
+
+                BufferedImage image = AWTUtil.toBufferedImage(picture);
 
                 System.out.println(
                         "Frame " + frameNumber
-                        + " width=" + image.getWidth()
-                        + " height=" + image.getHeight());
+                                + " width=" + image.getWidth()
+                                + " height=" + image.getHeight());
 
                 frameNumber++;
             }
