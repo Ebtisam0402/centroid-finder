@@ -1,12 +1,12 @@
-VideoExperiment.class
 DistanceImageBinarizer.class
 DfsBinaryGroupFinder.class
+Coordinate.class
+EuclideanColorDistance.class
+ColorDistanceFinder.class
+VideoExperiment.class
 BinarizingImageGroupFinder.class
 ImageGroupFinder.class
-Coordinate.class
 ImageSummaryApp.class
 BinaryGroupFinder.class
 ImageBinarizer.class
-EuclideanColorDistance.class
-ColorDistanceFinder.class
 Group.class
