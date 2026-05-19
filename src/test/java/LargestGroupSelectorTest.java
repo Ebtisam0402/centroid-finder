@@ -39,4 +39,20 @@ public class LargestGroupSelectorTest {
   assertSame(group, result.get());
  }
 
+ @Test
+ public void selectLargestReturnsLargestGroup() {
+  LargestGroupSelector selector = new LargestGroupSelector();
+
+  Group small = new Group(1, new Coordinate(1, 1));
+
+  Group medium = new Group(2, new Coordinate(2, 2));
+
+  Group large = new Group(3, new Coordinate(3, 3));
+
+  Optional<Group> result = selector.selectLargest(List.of(small, large, medium));
+
+  assertTrue(result.isPresent());
+  assertSame(large, result.get());
+ }
+
 }
