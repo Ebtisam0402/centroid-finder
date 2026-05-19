@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.lang.foreign.Linker.Option;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,15 @@ public class LargestGroupSelectorTest {
 
   LargestGroupSelector selector = new LargestGroupSelector();
   Optional<Group> result = selector.selectLargest(null);
+  assertTrue(result.isEmpty());
+ }
+
+ @Test
+ public void selectLargestReturnsEmptyWhenListIsEmpty() {
+  LargestGroupSelector selector = new LargestGroupSelector();
+
+  Optional<Group> result = selector.selectLargest(new ArrayList<>());
+
   assertTrue(result.isEmpty());
  }
 
