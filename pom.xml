@@ -80,7 +80,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
         <configuration>
-          <mainClass>VideoProcessorOptions</mainClass>
+          <mainClass>VideoProcessorApp</mainClass>
         </configuration>
       </plugin>
     </plugins>
