@@ -33,7 +33,7 @@ public class VideoProcessorOptions {
     public static VideoProcessorOptions fromArgs(String[] args) {
         if (args.length != 4) {
             throw new IllegalArgumentException(
-                "Usage: java -jar VideoProcessor.jar inputPath outputCsv targetColor threshold"
+                "Usage: java -jar videoProcessor.jar inputPath outputCsv targetColor threshold"
             );
         }
 
