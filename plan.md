@@ -7,48 +7,57 @@ The final output will be a CSV file. Each row will show the time in seconds from
 
 Architecture Plan
 User runs command
-       |
-       v
+|
+v
 VideoProcessorApp
 Reads command-line arguments
-       |
-       v
+|
+v
 VideoProcessorOptions
 Stores input video, output CSV, target color, threshold
-       |
-       v
+|
+v
 VideoProcessor
 Controls the full video processing workflow
-       |
-       +----------------------+
-       |                      |
-       v                      v
-VideoFrameReader          CsvWriter
-Uses JCodec               Writes rows to CSV
+|
++----------------------+
+| |
+v v
+VideoFrameReader CsvWriter
+Uses JCodec Writes rows to CSV
 to read mp4
-       |
-       v
+|
+v
 BufferedImage frame
-       |
-       v
+|
+v
 Existing Centroid Finder Classes
 DistanceImageBinarizer
 BinarizingImageGroupFinder
 DfsBinaryGroupFinder
-       |
-       v
+|
+v
 List<Group>
-       |
-       v
+|
+v
 LargestGroupSelector
 Finds biggest group
-       |
-       v
+|
+v
 Centroid result
 seconds, x, y
-       |
-       v
+|
+v
 CSV output file
 
-
 // VideoFrameReader only handles reading video frames. VideoProcessor coordinates the process. LargestGroupSelector only chooses the biggest group. CsvWriter only writes the output file.
+
+## Validation Testing wave 4
+
+We tested different target colors and thresholds to improve salamander tracking.
+
+The salamander was very dark while the background was bright pink, so using a black target color (000000) worked better than orange colors.
+
+We tested threshold values and found that 80 reduced background detection while still detecting the salamander body.
+
+The generated CSV coordinates stayed close together and changed slightly between frames, which matched the salamander’s slow movement in the video.
