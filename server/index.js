@@ -149,6 +149,14 @@ app.get("/process/:jobId/status", (req, res) => {
  res.json(job)
 })
 
-app.listen(PORT, () => {
- console.log(`Server listening on port http://localhost:${PORT}`)
-})
+if (require.main === module) {
+
+  app.listen(PORT, () => {
+    console.log(
+      `Server listening on port ${PORT}`
+    );
+  });
+
+}
+
+module.exports = app;
