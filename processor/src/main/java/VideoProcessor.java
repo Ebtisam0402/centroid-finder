@@ -53,22 +53,23 @@ public class VideoProcessor {
 
             ImageGroupFinder groupFinder = new BinarizingImageGroupFinder(
                 binarizer,
-                new DfsBinaryGroupFinder()
+                new BfsBinaryGroupFinder()
             );
 
             LargestGroupSelector selector = new LargestGroupSelector();
 
             // Read frames from the video.
-            while ((picture = grab.getNativeFrame()) != null
-                    && frameNumber < 5) {
+           while ((picture = grab.getNativeFrame()) != null) {
 
                 // Convert the frame into BufferedImage.
                 BufferedImage image =
                     AWTUtil.toBufferedImage(picture);
 
-                System.out.println(
-                    "Processing frame " + frameNumber
-                );
+             if (frameNumber % 100 == 0) {
+            System.out.println(
+                "Processing frame " + frameNumber
+            );
+          }
 
                 /*
                  * Temporary centroid values.
