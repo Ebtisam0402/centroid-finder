@@ -35,6 +35,52 @@ app.use(express.json())
 // Example: http://localhost:3000/videos/example.mp4
 app.use("/videos", express.static(videoDir))
 
+// GET /thumbnail/:filename
+// Creates a thumbnail image from the video
+app.get("/thumbnail/:filename", (req, res) => {
+  const filename = req.params.filename
+  const inputPath = path.join(videoDir, filename)
+
+  console.log("thumbnail request:", inputPath)
+
+  if (!fs.existsSync(inputPath)) {
+    return res.status(404).json({
+      error: "Video file not found"
+    })
+  }
+
+  res.setHeader("Content-Type", "image/png")
+
+  const ffmpeg = spawn("ffmpeg", [
+    "-ss", "00:00:01",
+    "-i", inputPath,
+    "-vframes", "1",
+    "-f", "image2pipe",
+    "-vcodec", "png",
+    "-"
+  ])
+
+  ffmpeg.stdout.pipe(res)
+
+  ffmpeg.stderr.on("data", (data) => {
+    console.log("ffmpeg:", data.toString())
+  })
+
+  ffmpeg.on("error", (error) => {
+    console.log("ffmpeg error:", error.message)
+
+    if (!res.headersSent) {
+      res.status(500).json({
+        error: error.message
+      })
+    }
+  })
+
+  ffmpeg.on("close", (code) => {
+    console.log("ffmpeg exited with code:", code)
+  })
+})
+
 // Publicly host CSV result files
 // Example: http://localhost:3000/results/job-id.csv
 app.use("/results", express.static(outputDir))
