@@ -1,4 +1,8 @@
 BinarizingImageGroupFinderTest$FakeImageBinarizer.class
+<<<<<<< HEAD
+=======
+CsvWriterTest.class
+>>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362
 LargestGroupSelectorTest.class
 EuclideanColorDistanceTest.class
 DistanceImageBinarizerTest.class
@@ -7,3 +11,7 @@ DistanceImageBinarizerTest$FakeImageBinarizer.class
 DfsBinaryGroupFinderTest.class
 BinarizingImageGroupFinderTest$FakeBinaryGroupFinder.class
 BinarizingImageGroupFinderTest.class
+<<<<<<< HEAD
+=======
+VideoProcessorOptionsTest.class
+>>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362

@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: EuclideanColorDistanceTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in EuclideanColorDistanceTest
+=======
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in EuclideanColorDistanceTest
+>>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362

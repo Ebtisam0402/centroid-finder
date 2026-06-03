@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: DistanceImageBinarizerTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s -- in DistanceImageBinarizerTest
+=======
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 s -- in DistanceImageBinarizerTest
+>>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362
