@@ -6,6 +6,8 @@
 
 2. Extract shared logic and use interfaces for reusable parts like image binarizing, group finding, and color distance. This would make the code easier to test and extend later.
 
+I reviwed the code and found that reusable interfaces were already implemented.
+
 ## Adding Tests
 
 1. Add more unit tests for edge cases such as no groups found, one-pixel groups, full-image masks, and invalid input files.
