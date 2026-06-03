@@ -1,3 +1,8 @@
+
+package app;
+
+import video.VideoProcessor;
+import video.VideoProcessorOptions;
 /**
  * Main entry point for the video processor program.
  *
@@ -5,6 +10,9 @@
  *
  * java -jar videoprocessor.jar inputPath outputCsv targetColor threshold
  */
+
+
+
 public class VideoProcessorApp {
 
     public static void main(String[] args) {

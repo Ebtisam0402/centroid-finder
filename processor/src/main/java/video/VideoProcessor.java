@@ -1,7 +1,23 @@
+package video;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
 import java.util.Optional;
+
+import csv.CsvWriter;
+
+import groups.BfsBinaryGroupFinder;
+import groups.Group;
+import groups.LargestGroupSelector;
+
+import image.BinarizingImageGroupFinder;
+import image.DistanceImageBinarizer;
+import image.EuclideanColorDistance;
+import image.ImageBinarizer;
+import image.ImageGroupFinder;
+
+import model.Coordinate;
 
 import org.jcodec.api.FrameGrab;
 import org.jcodec.common.io.NIOUtils;

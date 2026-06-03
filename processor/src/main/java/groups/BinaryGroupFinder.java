@@ -1,3 +1,5 @@
+package groups;
+
 import java.util.List;
 
 public interface BinaryGroupFinder {

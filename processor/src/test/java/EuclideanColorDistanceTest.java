@@ -2,6 +2,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import image.ColorDistanceFinder;
+import image.EuclideanColorDistance;
+
 public class EuclideanColorDistanceTest {
 
     @Test

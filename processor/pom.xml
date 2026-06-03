@@ -58,7 +58,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>VideoProcessorApp</mainClass>
+              <mainClass>app.VideoProcessorApp</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
@@ -80,7 +80,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
         <configuration>
-          <mainClass>VideoProcessorApp</mainClass>
+          <mainClass>app.VideoProcessorApp</mainClass>
         </configuration>
       </plugin>
     </plugins>

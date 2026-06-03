@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-/Users/azebsebhatu/SDEV334/centroid-finder/processor/src/test/java/BinarizingImageGroupFinderTest.java
-/Users/azebsebhatu/SDEV334/centroid-finder/processor/src/test/java/CsvWriterTest.java
-/Users/azebsebhatu/SDEV334/centroid-finder/processor/src/test/java/DfsBinaryGroupFinderTest.java
-/Users/azebsebhatu/SDEV334/centroid-finder/processor/src/test/java/DistanceImageBinarizerTest.java
-/Users/azebsebhatu/SDEV334/centroid-finder/processor/src/test/java/EuclideanColorDistanceTest.java
-/Users/azebsebhatu/SDEV334/centroid-finder/processor/src/test/java/LargestGroupSelectorTest.java
-/Users/azebsebhatu/SDEV334/centroid-finder/processor/src/test/java/VideoProcessorOptionsTest.java
-=======
 /Users/ebtisamjelani/sdev334/centroid-finder/processor/src/test/java/BinarizingImageGroupFinderTest.java
 /Users/ebtisamjelani/sdev334/centroid-finder/processor/src/test/java/CsvWriterTest.java
 /Users/ebtisamjelani/sdev334/centroid-finder/processor/src/test/java/DfsBinaryGroupFinderTest.java
@@ -14,4 +5,3 @@
 /Users/ebtisamjelani/sdev334/centroid-finder/processor/src/test/java/EuclideanColorDistanceTest.java
 /Users/ebtisamjelani/sdev334/centroid-finder/processor/src/test/java/LargestGroupSelectorTest.java
 /Users/ebtisamjelani/sdev334/centroid-finder/processor/src/test/java/VideoProcessorOptionsTest.java
->>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362

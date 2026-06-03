@@ -1,3 +1,7 @@
+package groups;
+
+import model.Coordinate;
+
 /**
  * Represents a group of contiguous pixels in an image.
  * The top-left cell of the array (row:0, column:0) is considered to be coordinate (x:0, y:0).
@@ -14,6 +18,7 @@
  * then by the x coordinate of the centroid, and finally by the y coordinate.
  * In a method that returns groups, they should be sorted in this natural order.
  */
+
 public record Group(int size, Coordinate centroid) implements Comparable<Group> {
 
     /**

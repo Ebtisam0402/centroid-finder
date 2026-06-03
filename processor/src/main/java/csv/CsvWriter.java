@@ -1,3 +1,4 @@
+package csv;
 /*
  * This class writes centroid information into a CSV file.
  * Each row in the CSV will look like:
@@ -6,6 +7,7 @@
  * 0.0,100,200
  * 1.0,-1,-1
  */
+
 
 import java.io.File;
 import java.io.PrintWriter;

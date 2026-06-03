@@ -1,8 +1,20 @@
+package app;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.imageio.ImageIO;
+
+import groups.DfsBinaryGroupFinder;
+import groups.Group;
+
+import image.BinarizingImageGroupFinder;
+import image.ColorDistanceFinder;
+import image.DistanceImageBinarizer;
+import image.EuclideanColorDistance;
+import image.ImageBinarizer;
+import image.ImageGroupFinder;
 
 /**
  * The Image Summary Application.

@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import video.VideoProcessorOptions;
+
 import org.junit.jupiter.api.Test;
 
 public class VideoProcessorOptionsTest {

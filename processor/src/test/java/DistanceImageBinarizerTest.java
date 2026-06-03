@@ -6,6 +6,10 @@ import java.awt.image.BufferedImage;
 
 import org.junit.jupiter.api.Test;
 
+import image.ImageBinarizer;
+import image.DistanceImageBinarizer;
+import image.EuclideanColorDistance;
+
 public class DistanceImageBinarizerTest {
 
     @Test

@@ -1,6 +1,10 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
+import groups.DfsBinaryGroupFinder;
+import groups.BinaryGroupFinder;
+import groups.Group;
+import model.Coordinate;
 
 import org.junit.jupiter.api.Test;
 

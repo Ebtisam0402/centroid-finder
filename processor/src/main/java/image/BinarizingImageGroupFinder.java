@@ -1,3 +1,8 @@
+package image;
+
+
+import groups.BinaryGroupFinder;
+import groups.Group;
 import java.awt.image.BufferedImage;
 import java.util.List;
 

@@ -1,8 +1,11 @@
+package groups;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import model.Coordinate;
 
 /*
  * Finds connected groups of 1s using BFS.

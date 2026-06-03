@@ -3,6 +3,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+import image.ImageBinarizer;
+import image.DistanceImageBinarizer;
+import image.EuclideanColorDistance;
+import image.ImageGroupFinder;
+import image.BinarizingImageGroupFinder;
+
+import groups.BinaryGroupFinder;
+import groups.DfsBinaryGroupFinder;
+import groups.Group;
+
+import model.Coordinate;
+
 import org.junit.jupiter.api.Test;
 
 public class BinarizingImageGroupFinderTest {

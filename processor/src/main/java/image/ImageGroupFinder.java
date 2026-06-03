@@ -1,3 +1,6 @@
+package image;
+
+import groups.Group;
 import java.util.List;
 import java.awt.image.BufferedImage;
 

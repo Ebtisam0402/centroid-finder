@@ -1,4 +1,4 @@
-
+package video;
 // read and store command-line arguments.
 
 public class VideoProcessorOptions {
