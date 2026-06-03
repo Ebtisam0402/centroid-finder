@@ -7,3 +7,5 @@
 -videoExperiment.java is a temporary test program and can be removed.
 -In videoProcessorApp.java has a lot of unssed comments
 -Not sure if we used JFree chart on pom.xml
+-VideoProcessor and VideoProcessorApp catch all exceptions, making debugging harder. It can be improve by handling specific errors separately.
+-VideoProcessorApp has commented-out dead code that can be removed. Removing it would make the file cleaner and easier to read.
