@@ -1,0 +1,9 @@
+-split the large server/index.js filr into smaller route files and services files.
+-nvc style express insructure instead of all going into index.js
+-keep express route handlers focused on request and response only.
+-store job status in a database or file instead of only in memory.
+-Add validation for targetColor ia a valid color and threshold is a number.
+-Add more tests for error handling
+-videoExperiment.java is a temporary test program and can be removed.
+-In videoProcessorApp.java has a lot of unssed comments
+-Not sure if we used JFree chart on pom.xml
