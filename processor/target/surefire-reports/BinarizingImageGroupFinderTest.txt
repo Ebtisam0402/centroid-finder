@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: BinarizingImageGroupFinderTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in BinarizingImageGroupFinderTest
-=======
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in BinarizingImageGroupFinderTest
->>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in BinarizingImageGroupFinderTest

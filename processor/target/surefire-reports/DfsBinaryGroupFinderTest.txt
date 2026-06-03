@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: DfsBinaryGroupFinderTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s -- in DfsBinaryGroupFinderTest
-=======
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in DfsBinaryGroupFinderTest
->>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s -- in DfsBinaryGroupFinderTest

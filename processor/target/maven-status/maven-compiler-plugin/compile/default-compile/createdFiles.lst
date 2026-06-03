@@ -8,10 +8,7 @@ ColorDistanceFinder.class
 VideoProcessorApp.class
 VideoExperiment.class
 VideoProcessorOptions.class
-<<<<<<< HEAD
-=======
 BfsBinaryGroupFinder.class
->>>>>>> 025f3c1278c493b0b3933ae0e70412cabcf2d362
 BinarizingImageGroupFinder.class
 ImageGroupFinder.class
 ImageSummaryApp.class
