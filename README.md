@@ -1,4 +1,102 @@
-# centroid-finder
+
+
+# Centroid Finder
+
+This project processes images and videos to find connected groups of pixels that match a target color. The video processor reads a video frame by frame, finds the largest matching group, and writes centroid data to a CSV file.
+
+## Project Structure
+
+* `processor/` - Java/Maven video and image processing code
+* `server/` - Express server for listing videos, creating thumbnails, and starting processing jobs
+* `processor/sampleInput/` - sample input files such as `sample.mp4`
+* `processor/sampleOutput/` - generated output files
+
+## Java Processor
+
+### Build
+
+```bash
+cd processor
+mvn test
+mvn package
+```
+
+### Run Video Processor
+
+```bash
+java -jar target/centroid-finder-1.0-SNAPSHOT-jar-with-dependencies.jar sampleInput/sample.mp4 sampleOutput/output.csv FFA200 164
+```
+
+Arguments:
+
+```text
+inputPath outputCsv targetColor threshold
+```
+
+Example:
+
+* `sampleInput/sample.mp4` - input salamander video
+* `sampleOutput/output.csv` - output CSV file
+* `FFA200` - target color
+* `164` - threshold
+
+### Run Tests
+
+```bash
+cd processor
+mvn test
+```
+
+## Express Server
+
+### Install Dependencies
+
+```bash
+cd server
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+PORT=3000
+VIDEO_DIR=../processor/sampleInput
+OUTPUT_DIR=../processor/sampleOutput
+PROCESSOR_JAR=../processor/target/centroid-finder-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+### Start Server
+
+```bash
+cd server
+node index.js
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+Useful routes:
+
+```text
+GET /api/videos
+GET /thumbnail/:filename
+POST /process/:filename?targetColor=FFA200&threshold=164
+GET /process/:jobId/status
+```
+
+## Recent Improvements
+
+* Added Java package structure: `app`, `video`, `image`, `groups`, `csv`, and `model`
+* Added validation for command-line arguments
+* Improved error messages for invalid input
+* Added tests for edge cases such as no groups found and full-image masks
+* Improved server startup validation for required `.env` paths
+
 
 ## _DO THIS FIRST_ Wave 0: AI Rules
 
@@ -74,5 +172,7 @@ Once you have confirmed it is working, clean up your code, make sure it's commit
 If you want to, you can make a new branch to start experimenting. See if you can come up with a better color distance method (hint: look up perceptual color spaces). See if you can make your code more efficient or mor suited to spotting salamanders! Experiment with other test files. PLEASE MAKE SURE THIS IS IN A SEPARATE BRANCH FROM YOUR SUBMISSION.
 
 ## Video Branch Test
+
+
 
 
