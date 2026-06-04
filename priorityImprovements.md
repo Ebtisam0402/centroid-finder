@@ -22,6 +22,10 @@ Missing command-line arguments
 Invalid argument handling
 Correct parsing of valid arguments
 
+- Added edge case test for no groups found.
+- Added edge case test for a full-image mask.
+- Verified all tests pass successfully.
+
 Verification:
 
 Ran mvn test

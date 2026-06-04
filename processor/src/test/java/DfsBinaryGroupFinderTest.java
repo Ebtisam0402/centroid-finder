@@ -63,6 +63,35 @@ public class DfsBinaryGroupFinderTest {
     }
 
     @Test
+public void testNoGroupsFound() {
+    int[][] image = {
+            { 0, 0 },
+            { 0, 0 }
+    };
+
+    BinaryGroupFinder finder = new DfsBinaryGroupFinder();
+
+    List<Group> groups = finder.findConnectedGroups(image);
+
+    assertEquals(0, groups.size());
+}
+
+@Test
+public void testFullImageMask() {
+    int[][] image = {
+            { 1, 1 },
+            { 1, 1 }
+    };
+
+    BinaryGroupFinder finder = new DfsBinaryGroupFinder();
+
+    List<Group> expected = List.of(
+            new Group(4, new Coordinate(0, 0)));
+
+    assertEquals(expected, finder.findConnectedGroups(image));
+}
+
+    @Test
     public void testDfsBinaryGroupFinderMultipleGroupsSortedDescending() {
         int[][] image = {
                 { 1, 1, 0, 1 },
