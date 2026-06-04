@@ -40,6 +40,9 @@ This adds validation for:
 ✅ Invalid threshold value
 ✅ Negative threshold
 Replace catch (Exception e) in VideoProcessorApp
+Improve VideoProcessor error handling
+✅ Validate VIDEO_DIR, OUTPUT_DIR, and PROCESSOR_JAR in the server
+✅ Confirm the server still runs
 
 Added input-file validation to VideoProcessorOptions.
 

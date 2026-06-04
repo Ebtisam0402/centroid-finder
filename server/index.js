@@ -25,6 +25,30 @@ const videoDir = process.env.VIDEO_DIR
 const outputDir = process.env.OUTPUT_DIR
 const jarPath = process.env.PROCESSOR_JAR
 
+if (!videoDir) {
+  throw new Error("VIDEO_DIR is missing from .env")
+}
+
+if (!outputDir) {
+  throw new Error("OUTPUT_DIR is missing from .env")
+}
+
+if (!jarPath) {
+  throw new Error("PROCESSOR_JAR is missing from .env")
+}
+
+if (!fs.existsSync(videoDir)) {
+  throw new Error(`Video directory not found: ${videoDir}`)
+}
+
+if (!fs.existsSync(outputDir)) {
+  throw new Error(`Output directory not found: ${outputDir}`)
+}
+
+if (!fs.existsSync(jarPath)) {
+  throw new Error(`Processor JAR not found: ${jarPath}`)
+}
+
 // This stores job status while the server is running
 // Later this could be replaced with a database or filesystem storage
 const jobs = {}
