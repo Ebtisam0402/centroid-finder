@@ -1,15 +1,19 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import video.VideoProcessorOptions;
+import java.io.File;
+import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
 public class VideoProcessorOptionsTest {
 
   @Test
-  public void fromArgsStoresValuesCorrectly() {
+  public void fromArgsStoresValuesCorrectly() throws IOException {
+    File tempInput = File.createTempFile("test-video", ".mp4");
+
     String[] args = {
-        "sampleInput/video.mp4",
+        tempInput.getAbsolutePath(),
         "sampleOutput/output.csv",
         "FFA200",
         "164"
@@ -17,10 +21,12 @@ public class VideoProcessorOptionsTest {
 
     VideoProcessorOptions options = VideoProcessorOptions.fromArgs(args);
 
-    assertEquals("sampleInput/video.mp4", options.getInputPath());
+    assertEquals(tempInput.getAbsolutePath(), options.getInputPath());
     assertEquals("sampleOutput/output.csv", options.getOutputCsvPath());
     assertEquals(0xFFA200, options.getTargetColor());
     assertEquals(164, options.getThreshold());
+
+    tempInput.delete();
   }
 
   @Test
@@ -51,9 +57,11 @@ public class VideoProcessorOptionsTest {
   }
 
   @Test
-  public void fromArgsParsesHexColorCorrectly() {
+  public void fromArgsParsesHexColorCorrectly() throws IOException {
+    File tempInput = File.createTempFile("test-video", ".mp4");
+
     String[] args = {
-        "input.mp4",
+        tempInput.getAbsolutePath(),
         "output.csv",
         "000000",
         "100"
@@ -62,12 +70,16 @@ public class VideoProcessorOptionsTest {
     VideoProcessorOptions options = VideoProcessorOptions.fromArgs(args);
 
     assertEquals(0x000000, options.getTargetColor());
+
+    tempInput.delete();
   }
 
   @Test
-  public void fromArgsParsesThresholdCorrectly() {
+  public void fromArgsParsesThresholdCorrectly() throws IOException {
+    File tempInput = File.createTempFile("test-video", ".mp4");
+
     String[] args = {
-        "input.mp4",
+        tempInput.getAbsolutePath(),
         "output.csv",
         "FFFFFF",
         "200"
@@ -76,11 +88,54 @@ public class VideoProcessorOptionsTest {
     VideoProcessorOptions options = VideoProcessorOptions.fromArgs(args);
 
     assertEquals(200, options.getThreshold());
+
+    tempInput.delete();
   }
 
   @Test
-  public void fromArgsThrowsWhenColorIsNotHex() {
-    String[] args = { "input.mp4", "output.csv", "ZZZZZZ", "100" };
+  public void fromArgsThrowsWhenColorIsNotHex() throws IOException {
+    File tempInput = File.createTempFile("test-video", ".mp4");
+
+    String[] args = {
+        tempInput.getAbsolutePath(),
+        "output.csv",
+        "ZZZZZZ",
+        "100"
+    };
+
+    assertThrows(IllegalArgumentException.class, () -> {
+      VideoProcessorOptions.fromArgs(args);
+    });
+
+    tempInput.delete();
+  }
+
+  @Test
+  public void fromArgsThrowsWhenThresholdIsNotNumber() throws IOException {
+    File tempInput = File.createTempFile("test-video", ".mp4");
+
+    String[] args = {
+        tempInput.getAbsolutePath(),
+        "output.csv",
+        "FFA200",
+        "abc"
+    };
+
+    assertThrows(IllegalArgumentException.class, () -> {
+      VideoProcessorOptions.fromArgs(args);
+    });
+
+    tempInput.delete();
+  }
+
+  @Test
+  public void fromArgsThrowsWhenInputFileDoesNotExist() {
+    String[] args = {
+        "missing-video.mp4",
+        "output.csv",
+        "FFA200",
+        "100"
+    };
 
     assertThrows(IllegalArgumentException.class, () -> {
       VideoProcessorOptions.fromArgs(args);
@@ -88,11 +143,20 @@ public class VideoProcessorOptionsTest {
   }
 
   @Test
-  public void fromArgsThrowsWhenThresholdIsNotNumber() {
-    String[] args = { "input.mp4", "output.csv", "FFA200", "abc" };
+  public void fromArgsThrowsWhenThresholdIsNegative() throws IOException {
+    File tempInput = File.createTempFile("test-video", ".mp4");
+
+    String[] args = {
+        tempInput.getAbsolutePath(),
+        "output.csv",
+        "FFA200",
+        "-1"
+    };
 
     assertThrows(IllegalArgumentException.class, () -> {
       VideoProcessorOptions.fromArgs(args);
     });
+
+    tempInput.delete();
   }
 }
