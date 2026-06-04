@@ -12,6 +12,20 @@
 
 2. Add an integration test that runs the full video processor on a small sample video and checks that a CSV file is created with expected centroid values.
 
+Added additional unit tests for VideoProcessorOptions.
+
+New tests validate:
+
+Missing command-line arguments
+Invalid argument handling
+Correct parsing of valid arguments
+
+Verification:
+
+Ran mvn test
+All 36 tests passed successfully
+BUILD SUCCESS
+
 ## Improving Error Handling
 
 1. Validate command-line arguments early in `VideoProcessorOptions`, including missing arguments, invalid color values, invalid threshold values, and missing input files.
