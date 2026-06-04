@@ -24,6 +24,11 @@ import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.model.Picture;
 import org.jcodec.scale.AWTUtil;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.jcodec.api.JCodecException;
+
 /*
  * This class processes a video and writes centroid data to a CSV file.
  */
@@ -135,13 +140,34 @@ public class VideoProcessor {
                 "CSV file created successfully."
             );
 
-        } catch (Exception e) {
+ } catch (FileNotFoundException e) {
 
-            System.out.println(
-                "Error processing video."
-            );
+    System.out.println(
+        "Could not create or write to the CSV file."
+    );
 
-            e.printStackTrace();
-        }
+} catch (IOException e) {
+
+    System.out.println(
+        "Could not read the video file or write the CSV file."
+    );
+
+} catch (JCodecException e) {
+
+    System.out.println(
+        "Could not decode the video file."
+    );
+
+} catch (RuntimeException e) {
+
+    System.out.println(
+        "Unexpected error while processing video: " + e.getMessage()
+    );
+}catch (Exception e) {
+
+    System.out.println(
+        "Error processing video: " + e.getMessage()
+    );
+}
     }
 }
