@@ -31,6 +31,19 @@ BUILD SUCCESS
 ## Improving Error Handling
 
 1. Validate command-line arguments early in `VideoProcessorOptions`, including missing arguments, invalid color values, invalid threshold values, and missing input files.
+The improvements:
+This adds validation for:
+
+✅ Missing arguments
+✅ Missing input file
+✅ Invalid hex color
+✅ Invalid threshold value
+✅ Negative threshold
+Replace catch (Exception e) in VideoProcessorApp
+
+Added input-file validation to VideoProcessorOptions.
+
+Updated unit tests to use temporary files instead of relying on sampleInput/sample.mp4. This makes the tests independent of project files and more reliable on different machines.
 
 2. Improve server error responses so the Express API clearly returns useful messages when the video file, JAR path, or output folder is missing.
 
