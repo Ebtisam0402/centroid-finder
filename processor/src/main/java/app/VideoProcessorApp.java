@@ -30,25 +30,11 @@ public class VideoProcessorApp {
             // Start processing the video.
             processor.process();
 
-            // Print values to confirm they were read correctly.
-            // System.out.println("Input video: "
-            //     + options.getInputPath());
+            
+     } catch (IllegalArgumentException e) {
 
-            // System.out.println("Output CSV: "
-            //     + options.getOutputCsvPath());
+    System.out.println("Invalid input: " + e.getMessage());
 
-            // System.out.println("Target color: "
-            //     + Integer.toHexString(options.getTargetColor()));
-
-            // System.out.println("Threshold: "
-            //     + options.getThreshold());
-
-            // System.out.println("Video processor started.");
-
-        } catch (Exception e) {
-
-            // Print error message if arguments are invalid.
-            System.out.println(e.getMessage());
-        }
+}
     }
 }
