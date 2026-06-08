@@ -33,3 +33,7 @@ The application records the object's location over time and exports the result t
 - Display movement paths on a graph
 - Download CSV reports through a web interface
 - Visualize movement using different colors
+
+## Demo
+
+![Salamander Tracking Demo](demo.gif)
