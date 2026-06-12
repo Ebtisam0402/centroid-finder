@@ -123,8 +123,8 @@ public class VideoProcessor {
 
                 if (largestGroup.isPresent()) {
                     Coordinate centroid = largestGroup.get().centroid();
-                    x = centroid.x();
-                    y = centroid.y();
+                    x = centroid.x() * 10;
+                    y = centroid.y() * 10;
                 }
 
                 // Write one row into the CSV file.
