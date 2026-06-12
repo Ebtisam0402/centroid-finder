@@ -211,10 +211,14 @@ app.get("/process/:jobId/status", (req, res) => {
  const outputFileName = `${jobId}.csv`
  const outputCsv = path.join(outputDir, outputFileName)
 
- if (job.status === "processing" && fs.existsSync(outputCsv)) {
-  job.status = "done"
-  job.resultUrl = `/results/${outputFileName}`
- }
+if (job.status === "processing" && fs.existsSync(outputCsv)) {
+  const stats = fs.statSync(outputCsv)
+
+  if (stats.size > 0) {
+    job.status = "done"
+    job.resultUrl = `/results/${outputFileName}`
+  }
+}
 
  res.json(job)
 })
